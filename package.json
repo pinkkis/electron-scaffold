@@ -1,0 +1,60 @@
+{
+  "name": "electron_scaffold",
+  "version": "0.1.0",
+  "description": "electron app scaffold with angular 1.5 and material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install && typings install",
+    "release": "gulp build && build",
+    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64",
+    "run": "electron ./app"
+  },
+  "keywords": [
+    "electron",
+    "template",
+    "scaffol",
+    "angular",
+    "material",
+    "desktop"
+  ],
+  "author": "Kristian Koivisto-Kokko",
+  "license": "MIT",
+  "devDependencies": {
+    "asar": "^0.11.0",
+    "electron-builder": "^5.2.0",
+    "electron-prebuilt": "^1.2.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-less": "^3.1.0",
+    "main-bower-files": "^2.13.1",
+    "rcedit": "^0.5.0"
+  },
+  "dependencies": {},
+  "build": {
+    "app-bundle-id": "",
+    "app-category-type": "",
+    "osx": {
+      "contents": [
+        {
+          "x": 400,
+          "y": 200,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 110,
+          "type": "file"
+        }
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "remoteReleases": "https://github.com/develar/electron-scaffold",
+      "iconUrl": "https://github.com/pinkkis/electron-scaffold/blob/master/build/icon.ico?raw=true"
+    }
+  }
+}
