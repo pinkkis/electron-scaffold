@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install && typings install",
-    "release": "gulp build && build",
-    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64",
-    "run": "electron ./app"
+    "dist:win64": "build --platform win32 --arch x64",
+    "run": "electron ./app",
+    "pack": "build --target dir",
+    "dist": "build"
   },
   "keywords": [
     "electron",
     "template",
-    "scaffol",
+    "scaffold",
     "angular",
     "material",
     "desktop"
@@ -24,7 +25,6 @@
     "asar": "^0.11.0",
     "electron-builder": "^5.2.0",
     "electron-prebuilt": "^1.2.2",
-    "electron-squirrel-startup": "^1.0.0",
     "event-stream": "^3.3.2",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.1.0",
@@ -34,25 +34,9 @@
   },
   "dependencies": {},
   "build": {
-    "app-bundle-id": "",
-    "app-category-type": "",
-    "osx": {
-      "contents": [
-        {
-          "x": 400,
-          "y": 200,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 110,
-          "y": 110,
-          "type": "file"
-        }
-      ]
-    },
+    "compression": "store",
+    "productName": "Electron Scaffold",
     "win": {
-      "target": "squirrel",
       "remoteReleases": "https://github.com/develar/electron-scaffold",
       "iconUrl": "https://github.com/pinkkis/electron-scaffold/blob/master/build/icon.ico?raw=true"
     }

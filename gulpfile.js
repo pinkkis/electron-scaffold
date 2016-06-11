@@ -6,9 +6,10 @@ const bowerFiles = require('main-bower-files');
 const path = require('path');
 const childProcess = require('child_process');
 const electron = require('electron-prebuilt');
+const electronInstaller = require('electron-winstaller');
 
 gulp.task('run', () => {
-	childProcess.spawn(electron, ['./app'], {stdio: 'inherit'});
+	childProcess.spawn(electron, ['./app'], { stdio: 'inherit' });
 });
 
 gulp.task('watch', ['build'], () => {
@@ -29,22 +30,18 @@ gulp.task('less', () => {
 
 gulp.task('inject', () => {
 	gulp.src('./app/index.html')
-		.pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
+		.pipe(inject(gulp.src(bowerFiles(), { read: false }), { name: 'bower' }))
 		.pipe(inject(es.merge(
 			gulp.src([
 				'./app/css/**/*.css',
 				'./app/scripts/app.js',
 				'./app/scripts/**/*.module.js',
 				'./app/scripts/**/*.js'
-			], {read: false})
+			], { read: false })
 		)))
 		.pipe(gulp.dest('./app'));
 });
 
 gulp.task('clean', () => {
 	// do nothing
-});
-
-gulp.task('deploy', () => {
-	// content
 });
