@@ -37,7 +37,7 @@
     "compression": "store",
     "productName": "Electron Scaffold",
     "win": {
-      "remoteReleases": "https://github.com/develar/electron-scaffold",
+      "remoteReleases": "https://github.com/pinkkis/electron-scaffold",
       "iconUrl": "https://github.com/pinkkis/electron-scaffold/blob/master/build/icon.ico?raw=true"
     }
   }
